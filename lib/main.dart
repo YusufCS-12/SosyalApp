@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'gonderikarti.dart';
 
 void main() {
   runApp(DenemeApp());
@@ -26,7 +27,7 @@ class AnaSayfa extends StatelessWidget {
   Widget build(BuildContext context) {
     //Scaffold ile Uygulamayı İskeletlere Ayırdık. mesela body kısmı gövedemiz oldu.
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey[300],
 
       //AppBar Başlangıcı
       appBar: AppBar(
@@ -95,21 +96,14 @@ class AnaSayfa extends StatelessWidget {
           ),
 
           //Gönderi Kartının zeminini Burada Oluşturduk
-          Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Material(
-              elevation: 1.0,
-              borderRadius: BorderRadius.circular(12.0),
-              child: Container(
-                padding: EdgeInsets.all(15.0),
-                width: double.infinity,
-                height: 380.0,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12.0),
-                    color: Colors.white),
-              ),
-            ),
-          ),
+          GonderiKarti(),
+          GonderiKarti(),
+          GonderiKarti(),
+          GonderiKarti(),
+          GonderiKarti(),
+          GonderiKarti(),
+          GonderiKarti(),
+          GonderiKarti(),
           //Burada Gönderi Kartı zemini bitti
         ],
       ),
