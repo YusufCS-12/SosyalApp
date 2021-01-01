@@ -96,14 +96,43 @@ class AnaSayfa extends StatelessWidget {
           ),
 
           //Gönderi Kartının zeminini Burada Oluşturduk
-          GonderiKarti(),
-          GonderiKarti(),
-          GonderiKarti(),
-          GonderiKarti(),
-          GonderiKarti(),
-          GonderiKarti(),
-          GonderiKarti(),
-          GonderiKarti(),
+          GonderiKarti(
+            profilResimLinki:
+                "https://scontent.fist4-1.fna.fbcdn.net/v/t1.0-9/37872865_10216868553217090_5501817728530382848_o.jpg?_nc_cat=103&ccb=2&_nc_sid=174925&_nc_ohc=ige1HKpCTZ8AX9Gilye&_nc_ht=scontent.fist4-1.fna&oh=805bfd1947b36b44515903933ad953c2&oe=600FC5F6",
+            aciklama: "Açıklama Satırı",
+            gecenSure: "10 dakika önce",
+            gonderiResimLinki:
+                "https://scontent.fist4-1.fna.fbcdn.net/v/t1.0-9/37872865_10216868553217090_5501817728530382848_o.jpg?_nc_cat=103&ccb=2&_nc_sid=174925&_nc_ohc=ige1HKpCTZ8AX9Gilye&_nc_ht=scontent.fist4-1.fna&oh=805bfd1947b36b44515903933ad953c2&oe=600FC5F6",
+            isimSoyad: "Yusuf Sonakalan",
+          ),
+          GonderiKarti(
+            profilResimLinki:
+                "https://scontent.fist4-1.fna.fbcdn.net/v/t1.0-9/14947432_103425963471949_6224541492872001496_n.jpg?_nc_cat=108&ccb=2&_nc_sid=09cbfe&_nc_ohc=7YxtIPVCTAsAX_I8CJQ&_nc_ht=scontent.fist4-1.fna&oh=b067b8382c0791d32249989935a4a290&oe=60128FA7",
+            aciklama: "KAfam çok iyi ya :)",
+            gecenSure: "13 dakika önce",
+            gonderiResimLinki:
+                "https://scontent.fist4-1.fna.fbcdn.net/v/t31.0-8/14990987_338721789819907_400563830368259261_o.jpg?_nc_cat=107&ccb=2&_nc_sid=a9b1d2&_nc_ohc=XpnW-oE2lz8AX-ByIHZ&_nc_ht=scontent.fist4-1.fna&oh=45ec2e0116d890a0d29a6737cc7b09a0&oe=60156E34",
+            isimSoyad: "Oğuzhan Kuşçu",
+          ),
+          GonderiKarti(
+            profilResimLinki:
+                "https://scontent.fist4-1.fna.fbcdn.net/v/t1.0-9/13669844_1332428780117776_6760768401082988564_n.jpg?_nc_cat=102&ccb=2&_nc_sid=09cbfe&_nc_ohc=OnPSRJTHXb0AX_-GOqF&_nc_ht=scontent.fist4-1.fna&oh=273a22f8e1cde0f08175aaffc8411421&oe=600F180F",
+            aciklama: "Yeni Yıl Kutlu Olsun",
+            gecenSure: "15 dakika önce",
+            gonderiResimLinki:
+                "https://scontent.fist4-1.fna.fbcdn.net/v/t1.0-9/40385413_10217103036159017_7295029710629634048_n.jpg?_nc_cat=110&ccb=2&_nc_sid=8bfeb9&_nc_ohc=rYKlUHBdJcQAX_K4eMk&_nc_ht=scontent.fist4-1.fna&oh=da5d7bdb1eb0d6da738c86ea077277f5&oe=6015DE01",
+            isimSoyad: "Emre Özcan",
+          ),
+          GonderiKarti(
+            profilResimLinki:
+                "https://scontent.fist4-1.fna.fbcdn.net/v/t1.0-9/38391633_1285390698263371_8610980941067714560_n.jpg?_nc_cat=101&ccb=2&_nc_sid=09cbfe&_nc_ohc=xMHd4j7Jh7oAX-DIGpa&_nc_ht=scontent.fist4-1.fna&oh=12c93678a47da18151b3a77a88c4bf48&oe=601124B9",
+            aciklama: " Farklı bir foto oldu",
+            gecenSure: "20 dakika önce",
+            gonderiResimLinki:
+                "https://scontent.fist4-1.fna.fbcdn.net/v/t1.0-9/123929957_2037745233027910_3662207814709826573_o.jpg?_nc_cat=102&ccb=2&_nc_sid=84a396&_nc_ohc=nF2X98nEbW8AX_lE4I7&_nc_ht=scontent.fist4-1.fna&oh=4754844f5ed041642e38c2e6489dd10a&oe=6014A4A7",
+            isimSoyad: "Emrah Başaran",
+          ),
+
           //Burada Gönderi Kartı zemini bitti
         ],
       ),
@@ -113,51 +142,56 @@ class AnaSayfa extends StatelessWidget {
   //profilkartının özellikleri burada tanımlı. Burada yaptığımız şey refactor edip Widgeta dönüştürdük.
 
   Widget profilKartiOlustur(String kullaniciAdi, String resimLinki) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-      child: Column(
-        children: <Widget>[
-          // Stack Columnun değişmesi ile oldu. Üst Üste Container yapacağımız Zaman Stack kullanıyoruz.
-          Stack(
-            //diğer containerı alignment ile üst sağa hizaladık
-            alignment: Alignment.topRight,
-            children: [
-              Container(
-                width: 70.0,
-                height: 70.0,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(
-                      width: 2.0,
-                      color: Colors.grey,
+    return Material(
+      child: InkWell(
+        onTap: () {},
+        child: Padding(
+          padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+          child: Column(
+            children: <Widget>[
+              // Stack Columnun değişmesi ile oldu. Üst Üste Container yapacağımız Zaman Stack kullanıyoruz.
+              Stack(
+                //diğer containerı alignment ile üst sağa hizaladık
+                alignment: Alignment.topRight,
+                children: [
+                  Container(
+                    width: 70.0,
+                    height: 70.0,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          width: 2.0,
+                          color: Colors.grey,
+                        ),
+                        borderRadius: BorderRadius.circular(35.0),
+                        image: DecorationImage(
+                          image: NetworkImage(
+                            resimLinki,
+                          ),
+                          fit: BoxFit.cover,
+                        )),
+                  ),
+                  Container(
+                    width: 20.0,
+                    height: 20.0,
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(25.0),
+                      border: Border.all(width: 2.0, color: Colors.white),
                     ),
-                    borderRadius: BorderRadius.circular(35.0),
-                    image: DecorationImage(
-                      image: NetworkImage(
-                        resimLinki,
-                      ),
-                      fit: BoxFit.cover,
-                    )),
+                  ),
+                ],
               ),
-              Container(
-                width: 20.0,
-                height: 20.0,
-                decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.circular(25.0),
-                  border: Border.all(width: 2.0, color: Colors.white),
-                ),
+              SizedBox(
+                height: 5.0,
               ),
+              Text(
+                kullaniciAdi,
+                style: TextStyle(fontSize: 15.0, color: Colors.black),
+              )
             ],
           ),
-          SizedBox(
-            height: 5.0,
-          ),
-          Text(
-            kullaniciAdi,
-            style: TextStyle(fontSize: 15.0, color: Colors.black),
-          )
-        ],
+        ),
       ),
     );
   }

@@ -1,6 +1,21 @@
 import 'package:flutter/material.dart';
 
 class GonderiKarti extends StatelessWidget {
+  final String profilResimLinki;
+  final String isimSoyad;
+  final String gecenSure;
+  final String gonderiResimLinki;
+  final String aciklama;
+
+  const GonderiKarti(
+      {Key key,
+      this.profilResimLinki,
+      this.isimSoyad,
+      this.gecenSure,
+      this.gonderiResimLinki,
+      this.aciklama})
+      : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -31,8 +46,7 @@ class GonderiKarti extends StatelessWidget {
                           borderRadius: BorderRadius.circular(30.9),
                           color: Colors.indigo,
                           image: DecorationImage(
-                            image: NetworkImage(
-                                "https://scontent.fist4-1.fna.fbcdn.net/v/t1.0-9/37872865_10216868553217090_5501817728530382848_o.jpg?_nc_cat=103&ccb=2&_nc_sid=174925&_nc_ohc=ige1HKpCTZ8AX9Gilye&_nc_ht=scontent.fist4-1.fna&oh=805bfd1947b36b44515903933ad953c2&oe=600FC5F6"),
+                            image: NetworkImage(profilResimLinki),
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -46,14 +60,14 @@ class GonderiKarti extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text(
-                            "Yusuf  Sonakalan",
+                            isimSoyad,
                             style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black),
                           ),
                           Text(
-                            "Gönderi Zamanı",
+                            gecenSure,
                             style: TextStyle(
                                 fontSize: 10,
                                 fontWeight: FontWeight.normal,
@@ -72,7 +86,7 @@ class GonderiKarti extends StatelessWidget {
                 height: 15.0,
               ),
               Text(
-                "Yorum Satırı",
+                aciklama,
                 style: TextStyle(
                     fontSize: 18.0,
                     fontWeight: FontWeight.normal,
@@ -82,7 +96,7 @@ class GonderiKarti extends StatelessWidget {
                 height: 20.0,
               ),
               Image.network(
-                "https://scontent.fist4-1.fna.fbcdn.net/v/t1.0-9/37872865_10216868553217090_5501817728530382848_o.jpg?_nc_cat=103&ccb=2&_nc_sid=174925&_nc_ohc=ige1HKpCTZ8AX9Gilye&_nc_ht=scontent.fist4-1.fna&oh=805bfd1947b36b44515903933ad953c2&oe=600FC5F6",
+                gonderiResimLinki,
                 width: double.infinity,
                 height: 200.0,
                 fit: BoxFit.cover,
