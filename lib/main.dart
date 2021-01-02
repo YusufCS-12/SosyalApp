@@ -1,3 +1,5 @@
+import 'package:deneme/profilsayfasi.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'gonderikarti.dart';
 
@@ -22,7 +24,12 @@ class DenemeApp extends StatelessWidget {
 }
 
 // Home kısmını burada Oluşturduk
-class AnaSayfa extends StatelessWidget {
+class AnaSayfa extends StatefulWidget {
+  @override
+  _AnaSayfaState createState() => _AnaSayfaState();
+}
+
+class _AnaSayfaState extends State<AnaSayfa> {
   @override
   Widget build(BuildContext context) {
     //Scaffold ile Uygulamayı İskeletlere Ayırdık. mesela body kısmı gövedemiz oldu.
@@ -41,7 +48,7 @@ class AnaSayfa extends StatelessWidget {
             //onPressed kısmında ise basılınca su damlacığı efekti verdirdik boş bir fonksiyon ile
             onPressed: () {}),
         title: Text(
-          "Deniyoruz",
+          "Learning",
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -139,12 +146,24 @@ class AnaSayfa extends StatelessWidget {
     );
   }
 
-  //profilkartının özellikleri burada tanımlı. Burada yaptığımız şey refactor edip Widgeta dönüştürdük.
-
   Widget profilKartiOlustur(String kullaniciAdi, String resimLinki) {
     return Material(
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          /*
+           Uygulamanın Can alıcı noktalarından biri. Burada on tap ile basıldığında Navigatör ile ilgili sayfa işlemleri yaptık. 
+           Buradaki hassas nokta build context ve widget ağacı olayları. Bunun için Home kısmındaki Ana sayfayı SatateFull Widget yaptım.
+           Push ile eklemek istediğin kartı itiyor navigator. Sonra MAterial page route kullandım. Burda da olay özel bir turizm şirketininin bizi istediğimiz yere götürmesi gibi. 
+           */
+          Navigator.push(
+              context,
+              // Material değil de Cupertino kullanırsam İOS vari bir geçiş efekti veriyor. Cupertino Yazdım MAterial yerine sonra Cupertino Kütüphanesini ekledim.
+              CupertinoPageRoute(
+                  builder: (BuildContext context) => (ProfilSayfasi(
+                        profilResimLinki: resimLinki,
+                        kullaniciAdi: kullaniciAdi,
+                      ))));
+        },
         child: Padding(
           padding: const EdgeInsets.only(left: 8.0, right: 8.0),
           child: Column(
